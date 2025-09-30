@@ -11,8 +11,8 @@ type newProdutoRequest = {
     nome:string,
     categoria: string,
     unidade_media: number,
-    preco_unitario: number
-     id_fornecedor: string
+    preco_unitario: number,
+    id_fornecedor: string
 }
 
 type findProdutoRequest = {
