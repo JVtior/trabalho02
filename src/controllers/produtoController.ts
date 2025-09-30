@@ -6,9 +6,9 @@ const service = new ProdutoService()
 export class ProdutoController {
     async createProduto(req: Request, res: Response){
         
-        const { nome, categoria, unidade_media, preco_unitario } = req.body
+        const { nome, categoria, unidade_media, preco_unitario, id_fornecedor } = req.body
       
-        const result = await service.createProduto({ nome, categoria, unidade_media, preco_unitario })
+        const result = await service.createProduto({ nome, categoria, unidade_media, preco_unitario,id_fornecedor })
         if (result instanceof Error) {
             return res.status(500).json(result.message)
         }
