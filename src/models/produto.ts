@@ -18,6 +18,10 @@ export class Produto {
     @Column()
     preco_unitario: number
 
+    
+    @Column()
+    id_fornecedor: string
+
     constructor(){
         this.id = uuid()
     }

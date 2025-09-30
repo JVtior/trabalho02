@@ -12,6 +12,7 @@ type newProdutoRequest = {
     categoria: string,
     unidade_media: number,
     preco_unitario: number
+     id_fornecedor: string
 }
 
 type findProdutoRequest = {
@@ -27,11 +28,11 @@ type updateProdutoRequest = {
 }
 
 export class ProdutoService {
-    async createProduto({nome, categoria, unidade_media, preco_unitario}:newProdutoRequest):Promise<Produto | Error> {
+    async createProduto({nome, categoria, unidade_media, preco_unitario,id_fornecedor}:newProdutoRequest):Promise<Produto | Error> {
         try {
              
             const produto = cursor.create({
-            nome, categoria, unidade_media, preco_unitario
+            nome, categoria, unidade_media, preco_unitario,id_fornecedor
         })
         
         await cursor.save(produto)  
